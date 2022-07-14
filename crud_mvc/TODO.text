@@ -1,0 +1,7 @@
+DATABASE
+[ok] criar uma classe de connection 
+//criar uma interface DAO
+//criar uma camada de service com as regras de negocio para conversar com o controller
+
+MAIN
+//usar o controller para carregar as views
