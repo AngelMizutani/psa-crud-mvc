@@ -3,9 +3,9 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class Connection {
-  static Future<Database?> get() async {
-    Database? banco;
+  static Database? banco;
 
+  static Future<Database> get() async {
     if (banco == null) {
       var caminho = join(await getDatabasesPath(), 'banco.db');
 
@@ -15,7 +15,6 @@ class Connection {
         db.execute(inserirPet2);
       });
     }
-
-    return banco;
+    return banco!;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:crud_mvc/controller/pet_controller.dart';
+import 'package:crud_mvc/model/pet_model.dart';
 import 'package:flutter/material.dart';
 
 class ListaPet extends StatelessWidget {
@@ -18,11 +19,11 @@ class ListaPet extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: petController.listar(),
-        builder: (context, AsyncSnapshot<List<Map<String, Object?>>> dados) {
+        builder: (context, dados) {
           if (!dados.hasData) {
             return const CircularProgressIndicator();
           }
-          var pets = dados.data!;
+          Object? pets = dados.data;
           return ListView.builder(
             itemCount: pets.length,
             itemBuilder: (context, index) {

@@ -1,14 +1,18 @@
-import 'package:crud_mvc/model/database/pet_dao.dart';
 import 'package:crud_mvc/model/pet_model.dart';
+import 'package:crud_mvc/model/service/pet_service.dart';
 
 class PetController {
-  var dao = PetDao();
+  var service = PetService();
 
   void salvar(Pet pet) {
-    dao.salvar(pet);
+    service.salvar(pet);
   }
 
-  Future<List<Map<String, Object?>>> listar() {
-    return dao.listar();
+  void deletar(int id) {
+    service.deletar(id);
+  }
+
+  Future<List<Pet>> listar() {
+    return service.listar();
   }
 }
